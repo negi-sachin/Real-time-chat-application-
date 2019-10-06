@@ -3,7 +3,7 @@ const http=require('http').Server(app);
 const io=require('socket.io')(http);
 
 app.use(require('express').static(__dirname+'/web'));
-
+const port = process.env.PORT || 3000
 app.get('/',(req,res)=>{
     res.sendFile(__dirname+'/index.html')
 });
@@ -35,4 +35,4 @@ client.broadcast.emit('joined',client.username+' joined');
 })
 
 //running server at port 3000
-http.listen(3000,()=>console.log('Server running at port 3000'));
+http.listen(port,()=>console.log('Server running at port: '+port ));

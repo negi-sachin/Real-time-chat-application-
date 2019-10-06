@@ -5,6 +5,13 @@
   <meta charset="UTF-8">
   <title>MY APP</title>
   <link rel="stylesheet" href="style.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src = "/socket.io/socket.io.js"></script>
@@ -38,16 +45,16 @@ $('form').submit(function(e){
       });
 })
  </script>
-<body>
-  <div class='container'>
-   <form class='form' >
+<body class="container">
+  
+   <form class=' form' >
       <input type="text" id='message'autocomplete='off' placeholder="Enter message here">
       <input type="submit" id='submit'  value="Send">
    </form><div class='online'>Total Online: <span id='totalclients' ></span></div>
 
    <div id="future"></div>
    
-</div>
+
 </body>
 
 <!-- //Styling elements -->
@@ -62,13 +69,14 @@ $('form').submit(function(e){
     width:70vw;
     height:60vh;
     margin:auto;
-    
+    border:1px red solid;
     background-color: rgba(56, 49, 49, 0.185);
     border-radius:20px;
     overflow:scroll;
 }
 #future{
    overflow: scroll;
+   
    width:100%;
    height: 100%;
    padding: 2px;
