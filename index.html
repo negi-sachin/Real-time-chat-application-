@@ -11,53 +11,45 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-</head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src = "/socket.io/socket.io.js"></script>
 <script src="/jquery/dist/jquery.js"></script>
-
-<script>
+</head>
+<body class="container bg bg-info">
+<!-- username page -->
+   <div class="username_page">
+      <form class="submitname">
+         <input type="text" placeholder="enter your name here" class="username form-control">
+      </input>
    
-var client=io();
 
-var username = prompt("Please enter your name", "Harry Potter");  //prompting to enter username 
+      </form>
+   </div>
 
-client.emit('username',username);
-
-client.on('totalclient',(data)=>{  //will show updated cleints that are online
-      document.getElementById('totalclients').innerHTML=data;
-     }) 
-
-
-$(()=>{   // using Jquery
-   
-   client.on('msgall',(data)=>{
-      $('#future').append('<p>'+'<b>'+data.username+': </b>'+data.data+'</p>');        
-   })
-$('form').submit(function(e){
-    e.preventDefault();  //to prevent form submission
-     
-     
-     var message = $('#message').val();
-     $('#message').val('');
-     client.emit('newmsg', message);
-      });
-})
- </script>
-<body class="container">
-  
-   <form class=' form' >
-      <input type="text" id='message'autocomplete='off' placeholder="Enter message here">
-      <input type="submit" id='submit'  value="Send">
-   </form><div class='online'>Total Online: <span id='totalclients' ></span></div>
-
+<!-- chatpage -->
+   <div id="chatpage">
+      <div id="root"></div>  
+   <form class="form" id="submitmsg">
+      <input type="text" class="msg form-control" id='message' 
+      autocomplete='off' 
+      placeholder="Enter message here"
+      >
+      <button type="submit" class='submit bt btn-dark'>Send</button>
+   </form>
+   <div class='online'>Total Online: <span id='totalclients' ></span></div>
+   <p class="typing"></p>
+   <p class="joined"></p>
+   <p class="msgdisplaytoall"></p>
    <div id="future"></div>
-   
-
+</div>
+<script src="index.js"></script>
+<link rel="stylesheet" type="" href="style.css"> 
 </body>
 
-<!-- //Styling elements -->
+   
+ 
+
+<!-- //Styling elements
 <style>
    p{
       border:1px inset green;
@@ -81,7 +73,7 @@ $('form').submit(function(e){
    height: 100%;
    padding: 2px;
 }
-.form{
+form{
    left:10px;
    height:50px;
    position: fixed;
@@ -113,4 +105,5 @@ $('form').submit(function(e){
    right:0px;
 }
 </style>
-</html>
+ -->
+ </html>
