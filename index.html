@@ -1,46 +1,67 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="UTF-8">
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>MY APP</title>
   <link rel="stylesheet" href="style.css">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src = "/socket.io/socket.io.js"></script>
 <script src="/jquery/dist/jquery.js"></script>
 </head>
-<body class="container bg bg-info">
+<body class="container">
 <!-- username page -->
-   <div class="username_page">
-      <form class="submitname">
-         <input type="text" placeholder="enter your name here" class="username form-control">
+   <div class="username_page ">
+      <div class="display-4 text-center ">Real time Chat App</div>
+      <form class="submitname ">
+         <input type="text" placeholder="Your name ?" class="username form-control">
       </input>
    
 
       </form>
+      <!-- <button id='animate'>Animate</button> -->
    </div>
 
 <!-- chatpage -->
    <div id="chatpage">
-      <div id="root"></div>  
-   <form class="form" id="submitmsg">
-      <input type="text" class="msg form-control" id='message' 
-      autocomplete='off' 
-      placeholder="Enter message here"
-      >
-      <button type="submit" class='submit bt btn-dark'>Send</button>
-   </form>
+     
+  
+  <div class="top">
    <div class='online'>Total Online: <span id='totalclients' ></span></div>
-   <p class="typing"></p>
-   <p class="joined"></p>
-   <p class="msgdisplaytoall"></p>
+   <div class="msgdisplaytoall"></div>
+   <div class="typing"></div>
+  
+   
+  </div>
+
+  <div class="middle container-fluid" id="midscroll">
+
+
    <div id="future"></div>
+   
+
+  </div>
+   
+
+<!-- bottom part of chatpage -->
+   <div class="bottom">
+      <form class="form " id="submitmsg">
+         <input type="text" class="msg form-control" id='message' 
+         autocomplete='off' 
+         placeholder="Enter message here"
+         >
+         <button type="submit" class='submit btn'><i class="fa fa-paper-plane animated shake delay-2s"></i></button>
+      </form>
+   </div>
 </div>
 <script src="index.js"></script>
 <link rel="stylesheet" type="" href="style.css"> 

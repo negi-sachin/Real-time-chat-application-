@@ -24,13 +24,17 @@ io.on('connect',(client)=>{
 
   //msg showing  
     client.on('newmsg',(data)=>{ 
-        io.sockets.emit('msgall',{data:data,username:client.username})
+        client.broadcast.emit('msgall',{data:data,username:client.username})
         console.log('msg :'+data)
         
       })
 //show others what user is typing
 client.on('msgdisplay',msg=>{
   client.broadcast.emit('msgdisplaytoall',msg)
+})
+//animate
+client.on('animate',()=>{
+  client.broadcast.emit('animation')
 })
 client.on('typing',username=>{
   client.broadcast.emit('showtyping',username)

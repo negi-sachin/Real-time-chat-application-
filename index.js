@@ -6,10 +6,16 @@ var username='user';
     client.emit('msgdisplay',{username:username,msg:msg})
     
   })
-    
+
+ $('.middle').dblclick(()=>{
+     alert('hello')
+ })   
+
    client.on('msgall',(data)=>{
     $('.msgdisplaytoall').text('')
-      $('#future').append('<p>'+'<b>'+data.username+': </b>'+data.data+'</p>');        
+      $('#future').append('<p class="animated  fadeInLeft">'+'<b>'+data.username+': </b>'+data.data+'</p>'); 
+      var elem = document.getElementById('midscroll');
+      elem.scrollTop = elem.scrollHeight+20;       
    })
  
    client.on('totalclient',(data)=>{  //will show updated cleints that are online
@@ -31,9 +37,13 @@ var username='user';
  }) 
 
  client.on('joined',(username)=>{
-     $('.joined').text(username+' joined')
+     $('#future').append(`<span class="animated  bounce"><kbd>${username}</kbd> has joined</span`)
  })
  
+ client.on('animation',()=>{
+     console.log('do animation')
+     $('body').toggle()
+ })
    $('#chatpage').hide()
 
    $('.submitname').submit((e)=>{
@@ -42,7 +52,7 @@ var username='user';
      client.emit('username',username);
      
 
-    $('.submitname').hide()
+    $('.username_page').hide()
    $('#chatpage').show()
   }) 
  
@@ -52,11 +62,14 @@ $('#submitmsg').submit((e)=>{
     e.preventDefault();  //to prevent form submission
      
    
-
+    
      var message = $('#message').val();
+     $('#future').append('<div >'+'<b>You: </b>'+message+'</div>');  
      $('#message').val('');
      client.emit('newmsg', message);
-
+     
+     var elem = document.getElementById('midscroll');
+     elem.scrollTop = elem.scrollHeight;
      
       });
 
@@ -71,3 +84,8 @@ $('.msg').focusout(()=>{
        
 
     })
+
+  $('#animate').click((e)=>{
+      e.preventDefault()
+      client.emit('animate')
+  })  
