@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+  }
+
+body{
+    background-color:rgba(0, 0, 0, 0.897);
+}
+
+/* Username page */
+.submitname{
+ 
+  max-width:90%;
+  margin: 40vh auto;
+  
+
+}
+
+.submitname input{
+    background:transparent;
+    text-align: center;
+    border: 0;
+    color: rgb(238, 230, 230);
+    
+    font-family: cursive;
+    border-bottom: 1px rgb(233, 229, 229) solid;
+    font-size: 30px;
+}
+.submitname input:focus{
+    background:transparent;
+    border:none;
+    color: rgb(240, 238, 238);
+    box-shadow: none;
+    outline: none;
+}
+
+/* chat page */
+/* top css */
+.top{
+    
+   
+    max-width: 95vw;
+    margin:0 auto;
+    padding: 10px;
+    overflow: hidden;
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+}
+.top .online{
+    text-align: right;
+    min-height:4vh;
+    color:white;
+ font-weight: 300;
+ 
+}
+
+.top .msgdisplaytoall{
+    overflow: hidden;
+    flex-wrap: nowrap;
+
+    text-overflow: ellipsis;
+    min-height:4vh;
+    color: rgb(13, 231, 13);
+}
+.top .typing{
+ color:rgba(6, 153, 6, 0.671);
+}
+/* middle part */
+.middle{
+  
+    overflow-y:scroll;
+    height: 60vh;
+    padding:5px 15px ;
+    border: .5px rgb(37, 4, 4) solid;
+    color: rgb(238, 233, 226);
+}
+
+#future{
+    text-align: center;
+}
+
+ #future div {
+   
+    width:auto;
+    height: auto;
+    padding: 10px;
+    text-align: right;
+    word-wrap: break-word;
+    font-family: cursive;
+   
+}
+
+#future p{
+    display: block;
+   
+    text-align: left;
+    word-wrap: break-word;
+    font-family: cursive;
+}
+
+#future span{
+    display: block;
+    margin:10px auto;
+   
+    font-family: cursive;
+}
+
+/* bottom css */
+.bottom{
+    border: 1px rgb(236, 230, 230) solid;
+    height: 10vh;
+    position: fixed;
+    max-width: 98vw;
+    min-width: 90vw;
+    margin: 10px auto 0px auto;
+    bottom: 5px;
+    background-color: rgb(5, 1, 1);
+}
+
+.bottom form{
+  
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.bottom input{
+    
+    width:90%;
+    height: 9vh;
+    background-color: rgb(24, 22, 22);
+    font-family: cursive;
+    border: none;
+   
+}
+.bottom input:focus{
+    background-color: rgb(24, 22, 22);
+    color: white;
+    box-shadow: none;
+    outline: none;
+    border: none;
+   
+}
+
+.submit {
+  
+    margin:0 10px;
+    background: transparent;
+
+}
+
+.submit i{
+    color: whitesmoke;
+    font-size: 30px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
