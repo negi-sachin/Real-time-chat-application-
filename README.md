@@ -1,6 +1,8 @@
 # Real-time-chat-application-
 This repo contains backend plus frontend code for making Real time web chat application using express and socket.io.
 
+            
+[App link]( https://negi-chat.herokuapp.com/)
 
 [Learn node]( https://nodejs.dev/)
 
